@@ -31,9 +31,8 @@ public class App
             System.out.println("0) Lopeta peli");
 
             if(sc.hasNext()){
-                int i = 0;
                 String stringInput = sc.nextLine();
-                i = Integer.parseInt(stringInput);
+                int i = Integer.parseInt(stringInput);
 
                 switch(i){
                     case 1:
@@ -57,7 +56,6 @@ public class App
                         if (status == true){
                             cave.removeMonster(targetMonster);
                         }
-
                         break;
                     case 4:
                         System.out.println("Anna tiedoston nimi, johon peli tallentaa:");
@@ -91,9 +89,10 @@ public class App
                     case 0:
                         exit = true;
                         break;
+
                     default:
                         System.out.println("Väärä syöte.");
-                }
+                    }
             }
         }
         sc.close();
