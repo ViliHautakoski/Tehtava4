@@ -57,12 +57,7 @@ public class App
                         cave.listMonsters();
                         int j = Integer.parseInt(sc.nextLine());
                         Monster targetMonster = cave.monsterList.get(j-1);
-                        boolean status = targetMonster.takeDamage(10);
                         cave.player.attack(targetMonster);
-                        if (status == true){
-                            System.out.println(targetMonster.type +" on kuollut!");
-                            cave.removeMonster(targetMonster);
-                        }
                         break;
                     case 4:
                         System.out.println("Anna tiedoston nimi, johon peli tallentaa:");
