@@ -44,16 +44,23 @@ public class App
                         cave.addMonster(monster);
                         break;
                     case 2:
-                        cave.listMonsters();
+                        if (cave.monsterList.size() != 0){
+                            System.out.println("Luolan hirviöt:");
+                            cave.listMonsters();
+                        }
+                        else{
+                            System.out.println("Luola on tyhjä.");
+                        }
                         break;
                     case 3:
                         System.out.println("Valitse hirviö, johon hyökätä:");
                         cave.listMonsters();
                         int j = Integer.parseInt(sc.nextLine());
-                        cave.player.attack(cave.monsterList.get(j-1));
                         Monster targetMonster = cave.monsterList.get(j-1);
                         boolean status = targetMonster.takeDamage(10);
+                        cave.player.attack(targetMonster);
                         if (status == true){
+                            System.out.println(targetMonster.type +" on kuollut!");
                             cave.removeMonster(targetMonster);
                         }
                         break;
