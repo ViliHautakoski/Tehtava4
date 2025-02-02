@@ -21,7 +21,6 @@ public class Cave implements Serializable {
 
     public void listMonsters() {
         int i = 1;
-        System.out.println("Luolan hirviöt:");
         for (Monster monster : monsterList){
             monster.printInfo(i++);
             }
