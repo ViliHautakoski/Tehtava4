@@ -12,8 +12,8 @@ public class Player implements Serializable {
 
     public void attack(Monster target) {
         System.out.println(name+" hyökkää "+target.type+" hirviöön!");
-        boolean status = target.takeDamage(10);
-        if(status == false){
+        target.takeDamage(10);
+        if(target.health > 0){
             System.out.println("Hirviöllä on "+target.health+" elämää jäljellä.");
         }
         else{
